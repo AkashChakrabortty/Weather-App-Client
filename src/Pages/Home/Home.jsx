@@ -5,13 +5,13 @@ const Home = () => {
   const [cities,setCities] = useState([])
   const [skip,setSkip] = useState(0);
   useEffect(() => {
-    fetch(`http://localhost:5000/allCities/${skip}`)
+    fetch(`https://weather-app-server-rho.vercel.app/allCities/${skip}`)
       .then((res) => res.json())
       .then((data) => setCities(data));
   }, [skip]);
    
   const handlePage = (page) => {
-   setSkip(page);
+   setSkip(page); 
   }
 
     return (
